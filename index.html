@@ -3,58 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عمران | مبرمج ومطور أنظمة</title>
+    <title>Imran | عمران</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Cairo', sans-serif; background-color: #050505; color: white; overflow-x: hidden; }
-        /* خلفية الشبكة الاحترافية */
-        .bg-grid { 
-            background-image: radial-gradient(rgba(34, 197, 94, 0.1) 1px, transparent 1px); 
-            background-size: 30px 30px; 
-        }
-        .text-glow { text-shadow: 0 0 20px rgba(34, 197, 94, 0.5); }
-        .img-mask {
-            box-shadow: 0 0 50px rgba(34, 197, 94, 0.3);
-            border: 4px solid #22c55e;
-        }
+        .bg-grid { background-image: radial-gradient(rgba(34, 197, 94, 0.15) 1px, transparent 1px); background-size: 30px 30px; }
+        .text-glow { text-shadow: 0 0 20px rgba(34, 197, 94, 0.6); }
+        .profile-frame { border: 4px solid #22c55e; box-shadow: 0 0 50px rgba(34, 197, 94, 0.4); }
     </style>
 </head>
 <body class="bg-grid">
 
-    <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto">
-        <div class="text-2xl font-black tracking-tighter uppercase">IMRAN<span class="text-green-500">.</span></div>
-        <a href="https://wa.me/964000000000" class="bg-green-500 text-black px-8 py-2 rounded-full font-bold text-sm hover:scale-105 transition-all">تواصل معي</a>
+    <nav class="flex justify-between items-center p-8 max-w-7xl mx-auto">
+        <div class="text-3xl font-black tracking-tighter uppercase text-white">IMRAN<span class="text-green-500">.</span></div>
+        <button class="bg-green-500 text-black px-8 py-2.5 rounded-full font-bold text-sm hover:brightness-110 transition">تواصل معي</button>
     </nav>
 
-    <main class="flex flex-col items-center justify-center pt-16 pb-10 px-6 text-center max-w-5xl mx-auto">
+    <main class="flex flex-col items-center justify-center pt-10 pb-20 px-6 text-center max-w-5xl mx-auto">
         
-        <div class="relative mb-10">
-            <div class="absolute -inset-2 bg-green-500 rounded-full blur opacity-15 animate-pulse"></div>
-            <img src="me.jpg" alt="عمران" class="relative w-40 h-40 md:w-52 md:h-52 rounded-full object-cover img-mask">
+        <div class="relative mb-12">
+            <div class="absolute -inset-4 bg-green-500 rounded-full blur-2xl opacity-10"></div>
+            <img src="me.jpg/future-header.png" alt="عمران" class="relative w-48 h-48 md:w-64 md:h-64 rounded-full object-cover profile-frame">
         </div>
 
-        <h1 class="text-6xl md:text-[90px] font-black leading-[1.1] mb-8 tracking-tighter">
-            تنبض <span class="text-green-500 text-glow">بالحياة</span> <br> 
+        <h1 class="text-6xl md:text-[100px] font-black leading-[0.95] mb-10 tracking-tighter">
+            <span class="text-green-500 text-glow font-black">تنبض بالحياة</span> <br> 
             وتقدم رؤية واضحة
         </h1>
         
-        <p class="text-gray-400 text-lg md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p class="text-gray-400 text-lg md:text-2xl mb-14 max-w-3xl mx-auto leading-relaxed font-bold">
             أنا عمران، مبرمج شغوف ببناء الأنظمة المعتمدة على البيانات لمساعدة الشركات في الوصول لأقصى مستويات الأداء.
         </p>
         
-        <div class="flex flex-col md:flex-row justify-center gap-5 w-full md:w-auto">
-            <a href="https://wa.me/964000000000" class="bg-[#22c55e] text-black font-black py-5 px-16 rounded-2xl hover:brightness-110 transition-all text-xl">
+        <div class="flex flex-col md:flex-row justify-center gap-6 w-full md:w-auto mb-20">
+            <a href="https://wa.me/964000000000" class="bg-green-500 text-black font-black py-5 px-16 rounded-2xl hover:bg-white transition-all text-xl shadow-lg shadow-green-500/20">
                 ابدأ العمل معي الآن ←
             </a>
-            <a href="#" class="border border-gray-800 py-5 px-16 rounded-2xl font-bold hover:border-green-500 transition-all text-xl text-gray-300">
+            <a href="#" class="border border-gray-800 py-5 px-16 rounded-2xl font-bold hover:border-green-500 transition-all text-xl text-gray-400">
                 مشاهدة أعمالي
             </a>
         </div>
+
+        <div class="flex flex-col items-center gap-4">
+            <div class="flex -space-x-3 rtl:space-x-reverse">
+                <img src="https://i.pravatar.cc/150?u=1" class="w-12 h-12 rounded-full border-2 border-black">
+                <img src="https://i.pravatar.cc/150?u=2" class="w-12 h-12 rounded-full border-2 border-black">
+                <img src="https://i.pravatar.cc/150?u=3" class="w-12 h-12 rounded-full border-2 border-black">
+            </div>
+            <div class="text-sm">
+                <p class="text-gray-300 font-bold mb-1">محل ثقة أكثر من +50 عميل ومستشار تقني</p>
+                <div class="text-green-500 text-xl">★★★★★</div>
+            </div>
+        </div>
     </main>
 
-    <section class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 pb-24 mt-8">
-        <div class="bg-[#0A0A0A] border border-white/5 p-10 rounded-[2.5rem] text-center">
-            <h3 class="text-4xl font-black mb-2 text-white">+15</h3>
-            <p class="text-gray-500 font-bold text-xs uppercase tracking-widest">
-                
+</body>
+</html>
