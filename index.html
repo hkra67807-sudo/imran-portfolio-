@@ -3,105 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imran | عمران</title>
+    <title>Imran Space | فضاء عمران الرقمي</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #050505; color: white; overflow-x: hidden; }
-        .bg-grid { background-image: radial-gradient(rgba(34, 197, 94, 0.15) 1.2px, transparent 1.2px); background-size: 35px 35px; }
-        .text-glow { text-shadow: 0 0 20px rgba(34, 197, 94, 0.8); }
-        .profile-frame { border: 4px solid #22c55e; box-shadow: 0 0 40px rgba(34, 197, 94, 0.4); transition: 0.5s; }
+        body { font-family: 'Cairo', sans-serif; background-color: #020202; color: white; overflow-x: hidden; position: relative; }
         
-        /* تصميم الكروت الجديد: زجاجي شفاف */
+        /* تأثير النجوم والكواكب في الخلفية */
+        #space-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .star { position: absolute; background: white; border-radius: 50%; opacity: 0.5; animation: twinkle var(--duration) infinite; }
+        .planet { position: absolute; border-radius: 50%; background: radial-gradient(circle, #22c55e 0%, #064e3b 100%); filter: blur(2px); opacity: 0.2; animation: float var(--duration) infinite ease-in-out; }
+
+        @keyframes twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+        @keyframes float { 0%, 100% { transform: translateY(0) translateX(0); } 50% { transform: translateY(-20px) translateX(20px); } }
+
+        .text-glow { text-shadow: 0 0 30px rgba(34, 197, 94, 0.8); }
+        .profile-frame { border: 4px solid #22c55e; box-shadow: 0 0 50px rgba(34, 197, 94, 0.4); z-index: 10; }
+        
+        /* الكروت الزجاجية */
         .glass-card { 
-            background: rgba(10, 10, 10, 0.8); 
-            border: 1px solid rgba(255, 255, 255, 0.03); 
-            backdrop-filter: blur(10px);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(255, 255, 255, 0.02); 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+            backdrop-filter: blur(15px);
+            transition: 0.4s;
         }
-        .glass-card:hover { 
-            border-color: #22c55e; 
-            transform: scale(1.05); 
-            background: rgba(34, 197, 94, 0.05);
-        }
-
-        /* أيقونات نيون بدون دوائر مغلقة */
-        .neon-icon { color: #22c55e; filter: drop-shadow(0 0 8px #22c55e); margin-bottom: 20px; transition: 0.3s; }
-        .glass-card:hover .neon-icon { transform: scale(1.2); filter: drop-shadow(0 0 15px #22c55e); }
-
-        /* نسبة مئوية بأسلوب رقمي */
-        .percent-text { 
-            font-size: 2.5rem; font-weight: 900; background: linear-gradient(to bottom, #fff, #22c55e);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
+        .glass-card:hover { border-color: #22c55e; transform: scale(1.05); background: rgba(34, 197, 94, 0.05); }
     </style>
 </head>
-<body class="bg-grid">
+<body>
+
+    <div id="space-bg"></div>
 
     <nav class="flex justify-between items-center p-8 max-w-7xl mx-auto">
-        <div class="text-3xl font-black tracking-tighter uppercase">IMRAN<span class="text-green-500">.</span></div>
-        <a href="https://wa.me/9647747231856" class="bg-green-500 text-black px-8 py-2.5 rounded-full font-bold text-sm hover:bg-white transition-all shadow-lg shadow-green-500/20">تواصل معي</a>
+        <div class="text-3xl font-black tracking-tighter uppercase italic">IMRAN<span class="text-green-500">.</span></div>
+        <a href="https://wa.me/9647747231856" class="bg-green-500 text-black px-8 py-2.5 rounded-full font-bold text-sm hover:scale-110 transition-all">تواصل معي</a>
     </nav>
 
     <main class="flex flex-col items-center justify-center pt-10 pb-20 px-6 text-center max-w-6xl mx-auto">
         
         <div class="relative mb-12">
-            <div class="absolute -inset-10 bg-green-500 rounded-full blur-3xl opacity-10 animate-pulse"></div>
+            <div class="absolute -inset-16 bg-green-500 rounded-full blur-[100px] opacity-10"></div>
             <img src="me.jpg/future-header.png" alt="عمران" class="relative w-48 h-48 md:w-60 md:h-60 rounded-full object-cover profile-frame">
         </div>
 
-        <h2 class="text-green-500 text-xl md:text-2xl font-bold mb-8 italic opacity-80">
+        <h2 class="text-green-500 text-xl md:text-2xl font-bold mb-8 italic tracking-widest">
             "وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ وَرَسُولُهُ وَالْمُؤْمِنُونَ"
         </h2>
 
         <h1 class="text-5xl md:text-[90px] font-black leading-[1.1] mb-12 tracking-tighter">
-            خبرات برمجية <br> <span class="text-green-500 text-glow">بأبعاد رقمية</span>
+            إبداع بلا حدود <br> <span class="text-green-500 text-glow">في فضاء البرمجة</span>
         </h1>
 
         <div class="flex justify-center mb-32">
-            <a href="https://wa.me/9647747231856" class="bg-white text-black font-black py-5 px-16 rounded-2xl hover:bg-green-500 transition-all text-xl shadow-xl active:scale-95">
-                ابدأ مشروعك الآن ←
+            <a href="https://wa.me/9647747231856" class="bg-white text-black font-black py-5 px-16 rounded-2xl hover:bg-green-500 transition-all text-xl shadow-2xl">
+                ابدأ رحلتك معنا ←
             </a>
         </div>
 
         <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <div class="glass-card p-10 rounded-[2rem]">
-                <div class="neon-icon"><i data-lucide="terminal" size="48"></i></div>
-                <div class="percent-text counter" data-target="100">0%</div>
-                <div class="text-gray-400 font-bold uppercase tracking-widest mt-2">Coding</div>
+            <div class="glass-card p-10 rounded-[2.5rem]">
+                <div class="text-green-500 mb-4 flex justify-center"><i data-lucide="rocket" size="40"></i></div>
+                <div class="text-3xl font-black mb-1 counter" data-target="100">0%</div>
+                <div class="text-gray-500 text-xs font-bold uppercase tracking-widest">Efficiency</div>
             </div>
-
-            <div class="glass-card p-10 rounded-[2rem]">
-                <div class="neon-icon"><i data-lucide="layers" size="48"></i></div>
-                <div class="percent-text counter" data-target="100">0%</div>
-                <div class="text-gray-400 font-bold uppercase tracking-widest mt-2">Design</div>
+            <div class="glass-card p-10 rounded-[2.5rem]">
+                <div class="text-green-500 mb-4 flex justify-center"><i data-lucide="shield-check" size="40"></i></div>
+                <div class="text-3xl font-black mb-1 counter" data-target="100">0%</div>
+                <div class="text-gray-500 text-xs font-bold uppercase tracking-widest">Security</div>
             </div>
-
-            <div class="glass-card p-10 rounded-[2rem]">
-                <div class="neon-icon"><i data-lucide="database" size="48"></i></div>
-                <div class="percent-text counter" data-target="100">0%</div>
-                <div class="text-gray-400 font-bold uppercase tracking-widest mt-2">Logic</div>
+            <div class="glass-card p-10 rounded-[2.5rem]">
+                <div class="text-green-500 mb-4 flex justify-center"><i data-lucide="orbit" size="40"></i></div>
+                <div class="text-3xl font-black mb-1 counter" data-target="100">0%</div>
+                <div class="text-gray-500 text-xs font-bold uppercase tracking-widest">Creativity</div>
             </div>
-
-            <div class="glass-card p-10 rounded-[2rem]">
-                <div class="neon-icon"><i data-lucide="wind" size="48"></i></div>
-                <div class="percent-text counter" data-target="100">0%</div>
-                <div class="text-gray-400 font-bold uppercase tracking-widest mt-2">Speed</div>
+            <div class="glass-card p-10 rounded-[2.5rem]">
+                <div class="text-green-500 mb-4 flex justify-center"><i data-lucide="milestone" size="40"></i></div>
+                <div class="text-3xl font-black mb-1 counter" data-target="100">0%</div>
+                <div class="text-gray-400 text-xs font-bold uppercase tracking-widest">Planning</div>
             </div>
-
         </div>
     </main>
-
-    <footer class="py-12 text-center border-t border-white/5 opacity-20 text-[10px] tracking-[0.6em] font-bold">
-        IMRAN DIGITAL SOLUTIONS - 2026
-    </footer>
 
     <script>
         lucide.createIcons();
 
-        // كود تحريك الأرقام
+        // توليد النجوم والكواكب برمجياً
+        const bg = document.getElementById('space-bg');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 3 + 'px';
+            star.style.height = star.style.width;
+            star.style.top = Math.random() * 100 + '%';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
+            bg.appendChild(star);
+        }
+        for (let i = 0; i < 5; i++) {
+            const planet = document.createElement('div');
+            planet.className = 'planet';
+            const size = Math.random() * 100 + 50 + 'px';
+            planet.style.width = size;
+            planet.style.height = size;
+            planet.style.top = Math.random() * 100 + '%';
+            planet.style.left = Math.random() * 100 + '%';
+            planet.style.setProperty('--duration', Math.random() * 10 + 5 + 's');
+            bg.appendChild(planet);
+        }
+
+        // العداد التصاعدي
         const counters = document.querySelectorAll('.counter');
         window.onload = () => {
             counters.forEach(counter => {
@@ -110,9 +121,7 @@
                     const count = +counter.innerText.replace('%', '');
                     if (count < target) {
                         counter.innerText = count + 1 + '%';
-                        setTimeout(updateCount, 15);
-                    } else {
-                        counter.innerText = target + '%';
+                        setTimeout(updateCount, 20);
                     }
                 };
                 updateCount();
