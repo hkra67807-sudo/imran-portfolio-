@@ -3,50 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imran | عمران</title>
+    <title>Imran | الفضاء الرقمي</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* فضاء صافي وهادئ */
         body { 
             font-family: 'Cairo', sans-serif; 
-            background: radial-gradient(circle at top, #020b04 0%, #000000 100%); 
+            background: radial-gradient(circle at center, #010802 0%, #000000 100%); 
             color: white; 
             overflow-x: hidden; 
             min-height: 100vh;
         }
 
-        /* حاوية النجوم القليلة */
-        .stars-background {
+        /* حاوية النجوم الكثيرة */
+        .stars-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
+            pointer-events: none;
         }
         .star {
             position: absolute;
             background: white;
             border-radius: 50%;
-            opacity: 0.15; /* خافتة جداً */
+            opacity: 0.3;
+            animation: twinkle var(--duration) infinite ease-in-out;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.2); }
         }
 
-        /* الكبسولة الزجاجية */
+        /* الكبسولة الزجاجية والبخار */
         .glass-pill {
             background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(25px);
-            border: 1px solid rgba(34, 197, 94, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(34, 197, 94, 0.12);
             border-radius: 999px;
             height: 250px;
             position: relative;
             overflow: hidden;
-            transition: 0.4s ease;
+            transition: 0.5s ease;
         }
-        .glass-pill:hover { border-color: rgba(34, 197, 94, 0.4); transform: scale(1.02); }
+        .glass-pill:hover { border-color: #22c55e; box-shadow: 0 0 30px rgba(34, 197, 94, 0.15); }
 
-        /* البخار الصافي */
         .steam {
             position: absolute;
             bottom: -5%;
@@ -58,13 +62,13 @@
             transition: height 5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .text-glow { text-shadow: 0 0 40px rgba(34, 197, 94, 0.6); }
-        .profile-frame { border: 2px solid #22c55e; box-shadow: 0 0 50px rgba(34, 197, 94, 0.2); }
+        .text-glow { text-shadow: 0 0 35px rgba(34, 197, 94, 0.7); }
+        .profile-frame { border: 2px solid #22c55e; box-shadow: 0 0 50px rgba(34, 197, 94, 0.3); }
     </style>
 </head>
 <body>
 
-    <div class="stars-background" id="starField"></div>
+    <div class="stars-container" id="starsField"></div>
 
     <nav class="flex justify-between items-center p-8 max-w-7xl mx-auto">
         <div class="text-3xl font-black italic tracking-tighter uppercase">IMRAN<span class="text-green-500">.</span></div>
@@ -77,15 +81,15 @@
             <img src="me.jpg/future-header.png" alt="عمران" class="relative w-40 h-40 md:w-52 md:h-52 rounded-full object-cover profile-frame">
         </div>
 
-        <p class="text-green-500/70 text-sm font-bold mb-4 tracking-[0.2em]">"وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ"</p>
+        <p class="text-green-500/80 text-sm font-bold mb-4 tracking-[0.2em] italic">"وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ"</p>
 
-        <h1 class="text-5xl md:text-[70px] font-black leading-none mb-3">نصنع الواقع الرقمي</h1>
-        <h1 class="text-3xl md:text-[50px] font-black text-green-500 text-glow mb-12 uppercase tracking-tight">بأبعاد تتجاوز الخيال</h1>
+        <h1 class="text-5xl md:text-[72px] font-black leading-none mb-3">نصنع الواقع الرقمي</h1>
+        <h1 class="text-3xl md:text-[52px] font-black text-green-500 text-glow mb-12 tracking-tight">بأبعاد تتجاوز الخيال</h1>
 
         <div class="mb-20">
-            <a href="https://wa.me/9647747231856" class="group inline-flex items-center gap-4 bg-white text-black font-black py-4 px-14 rounded-full hover:bg-green-500 transition-all shadow-xl active:scale-95">
-                <i data-lucide="message-circle" class="w-6 h-6 group-hover:rotate-12 transition-transform"></i>
-                <span class="text-lg">تواصل مباشر</span>
+            <a href="https://wa.me/9647747231856" class="inline-flex items-center gap-4 bg-white text-black font-black py-4 px-14 rounded-full hover:bg-green-500 transition-all shadow-2xl hover:scale-105 active:scale-95">
+                <i data-lucide="message-circle" class="w-6 h-6"></i>
+                <span class="text-lg">تواصل معي الآن</span>
             </a>
         </div>
 
@@ -94,28 +98,28 @@
                 <div class="steam"></div>
                 <div class="relative z-10">
                     <div class="text-4xl font-black counter" data-target="100">0%</div>
-                    <p class="text-[9px] text-green-500/60 font-bold tracking-[0.4em] uppercase mt-2">Code</p>
+                    <p class="text-[9px] text-green-500/70 font-bold tracking-[0.4em] uppercase mt-2">Code</p>
                 </div>
             </div>
             <div class="glass-pill flex flex-col items-center justify-center">
                 <div class="steam"></div>
                 <div class="relative z-10">
                     <div class="text-4xl font-black counter" data-target="100">0%</div>
-                    <p class="text-[9px] text-green-500/60 font-bold tracking-[0.4em] uppercase mt-2">Design</p>
+                    <p class="text-[9px] text-green-500/70 font-bold tracking-[0.4em] uppercase mt-2">Design</p>
                 </div>
             </div>
             <div class="glass-pill flex flex-col items-center justify-center">
                 <div class="steam"></div>
                 <div class="relative z-10">
                     <div class="text-4xl font-black counter" data-target="100">0%</div>
-                    <p class="text-[9px] text-green-500/60 font-bold tracking-[0.4em] uppercase mt-2">Logic</p>
+                    <p class="text-[9px] text-green-500/70 font-bold tracking-[0.4em] uppercase mt-2">Logic</p>
                 </div>
             </div>
             <div class="glass-pill flex flex-col items-center justify-center">
                 <div class="steam"></div>
                 <div class="relative z-10">
                     <div class="text-4xl font-black counter" data-target="100">0%</div>
-                    <p class="text-[9px] text-green-500/60 font-bold tracking-[0.4em] uppercase mt-2">Speed</p>
+                    <p class="text-[9px] text-green-500/70 font-bold tracking-[0.4em] uppercase mt-2">Speed</p>
                 </div>
             </div>
         </div>
@@ -124,9 +128,9 @@
     <script>
         lucide.createIcons();
 
-        // نجوم قليلة وثابتة (40 نجمة فقط)
-        const starField = document.getElementById('starField');
-        for (let i = 0; i < 40; i++) {
+        // توليد 150 نجمة عشوائية
+        const starsField = document.getElementById('starsField');
+        for (let i = 0; i < 150; i++) {
             const star = document.createElement('div');
             star.className = 'star';
             const size = Math.random() * 2 + 1 + 'px';
@@ -134,7 +138,9 @@
             star.style.height = size;
             star.style.top = Math.random() * 100 + '%';
             star.style.left = Math.random() * 100 + '%';
-            starField.appendChild(star);
+            // سرعة لمعان عشوائية لكل نجمة
+            star.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
+            starsField.appendChild(star);
         }
 
         window.onload = () => {
