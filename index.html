@@ -97,4 +97,59 @@
                         <p class="text-[8px] text-green-500 font-bold tracking-widest uppercase">Code</p>
                     </div>
                 </div>
-                
+                <div class="glass-pill">
+                    <div class="steam"></div>
+                    <div class="relative z-10">
+                        <div class="text-3xl font-black counter" data-target="100">0%</div>
+                        <p class="text-[8px] text-green-500 font-bold tracking-widest uppercase">Design</p>
+                    </div>
+                </div>
+                <div class="glass-pill">
+                    <div class="steam"></div>
+                    <div class="relative z-10">
+                        <div class="text-3xl font-black counter" data-target="100">0%</div>
+                        <p class="text-[8px] text-green-500 font-bold tracking-widest uppercase">Logic</p>
+                    </div>
+                </div>
+                <div class="glass-pill">
+                    <div class="steam"></div>
+                    <div class="relative z-10">
+                        <div class="text-3xl font-black counter" data-target="100">0%</div>
+                        <p class="text-[8px] text-green-500 font-bold tracking-widest uppercase">Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        // 150 نجمة
+        const starsField = document.getElementById('starsField');
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2 + 1 + 'px';
+            star.style.width = size; star.style.height = size;
+            star.style.top = Math.random() * 100 + '%';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
+            starsField.appendChild(star);
+        }
+
+        window.onload = () => {
+            document.querySelectorAll('.steam').forEach(s => s.style.height = '100%');
+            document.querySelectorAll('.counter').forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const timer = setInterval(() => {
+                    count++;
+                    counter.innerText = count + '%';
+                    if (count >= target) clearInterval(timer);
+                }, 70);
+            });
+        };
+    </script>
+</body>
+</html>
