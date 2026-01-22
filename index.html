@@ -3,91 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عمران | مبرمج ومطور أنظمة</title>
+    <title>عمران | مبرمج ومطور حلول رقمية</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Cairo', sans-serif; background-color: #050505; color: white; scroll-behavior: smooth; }
         .bg-grid { background-image: radial-gradient(#166534 0.5px, transparent 0.5px); background-size: 40px 40px; }
-        .neon-text { text-shadow: 0 0 10px rgba(34, 197, 94, 0.5); }
+        .neon-glow { box-shadow: 0 0 25px rgba(34, 197, 94, 0.2); }
     </style>
 </head>
 <body class="bg-grid">
 
-    <nav class="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5 p-5">
+    <nav class="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5 p-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="text-2xl font-black tracking-tighter">IMRAN<span class="text-green-500">.</span></div>
-            <div class="hidden md:flex gap-10 text-sm font-bold text-gray-400">
-                <a href="#home" class="hover:text-green-500 transition">الرئيسية</a>
-                <a href="#skills" class="hover:text-green-500 transition">مهاراتي</a>
-                <a href="#projects" class="hover:text-green-500 transition">مشاريعي</a>
+            <div class="text-2xl font-black tracking-tighter uppercase">IMRAN<span class="text-green-500">.</span></div>
+            <div class="flex gap-4">
+                <a href="https://wa.me/964000000000" class="bg-green-500 text-black px-8 py-2.5 rounded-full font-bold text-sm hover:bg-white transition-all transform hover:scale-105">تواصل معي</a>
             </div>
-            <a href="https://wa.me/964000000000" class="bg-green-500 text-black px-6 py-2 rounded-full font-bold text-sm hover:scale-105 transition">اتصل بي</a>
         </div>
     </nav>
 
-    <section id="home" class="pt-32 pb-20 px-6 text-center max-w-5xl mx-auto">
-        <span class="inline-block py-1 px-4 border border-green-500/20 rounded-full text-green-500 text-xs font-bold mb-8 bg-green-500/5">
-            مبرمج ومطور حلول رقمية
-        </span>
-        <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight">
-            أنا عمران، أصنع <br> 
-            <span class="text-green-500 neon-text">برمجيات المستقبل</span>
+    <section class="min-h-[85vh] flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto">
+        <div class="inline-flex items-center gap-2 py-1.5 px-4 border border-green-500/20 rounded-full text-green-500 text-xs font-bold mb-10 bg-green-500/5 uppercase tracking-widest">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            Available for Freelance
+        </div>
+
+        <h1 class="text-6xl md:text-9xl font-black mb-8 leading-tight tracking-tighter">
+            عمران <br> 
+            <span class="text-green-500 italic">مبرمج مطور</span>
         </h1>
-        <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
-            متخصص في بناء الأنظمة المخصصة وتطوير واجهات المستخدم الاحترافية التي تجمع بين الأداء العالي والتصميم العصري.
+        
+        <p class="text-gray-400 text-lg md:text-2xl mb-14 max-w-3xl mx-auto leading-relaxed font-medium">
+            أقوم بتحويل الأفكار المعقدة إلى واجهات رقمية بسيطة وقوية. متخصص في بناء الحلول البرمجية التي تضع عملك في المقدمة.
         </p>
-        <div class="flex flex-col md:flex-row justify-center gap-5">
-            <a href="#projects" class="bg-white text-black font-extrabold py-4 px-12 rounded-2xl hover:bg-green-500 transition-all text-center">
-                رؤية مشاريعي
-            </a>
-            <a href="https://wa.me/964000000000" class="border border-gray-800 py-4 px-12 rounded-2xl font-bold hover:bg-gray-900 transition text-center">
+        
+        <div class="flex flex-col md:flex-row justify-center gap-6 w-full md:w-auto">
+            <a href="https://wa.me/964000000000" class="bg-white text-black font-black py-5 px-14 rounded-2xl hover:bg-green-500 transition-all text-xl neon-glow">
                 ابدأ مشروعك الآن
             </a>
         </div>
     </section>
 
-    <section class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 mb-32">
-        <div class="bg-[#0A0A0A] border border-white/5 p-10 rounded-[2.5rem] hover:border-green-500/30 transition shadow-xl">
-            <h3 class="text-4xl font-black mb-2 text-green-500">+15</h3>
-            <p class="text-gray-400 font-bold">مشروع مكتمل</p>
+    <section class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 pb-32">
+        <div class="bg-[#0A0A0A] border border-white/5 p-12 rounded-[3rem] group hover:border-green-500/50 transition-all">
+            <h3 class="text-5xl font-black mb-3 text-white group-hover:text-green-500 transition">+15</h3>
+            <p class="text-gray-500 font-bold text-lg uppercase tracking-wider">مشروع برمجـي</p>
         </div>
-        <div class="bg-green-500 p-10 rounded-[2.5rem] text-black shadow-2xl shadow-green-500/20">
-            <h3 class="text-4xl font-black mb-2">100%</h3>
-            <p class="font-bold">دقة وجودة في الكود</p>
+        
+        <div class="bg-green-500 p-12 rounded-[3rem] text-black shadow-2xl shadow-green-500/20 transform md:-translate-y-4">
+            <h3 class="text-5xl font-black mb-3">100%</h3>
+            <p class="font-black text-lg uppercase tracking-wider">إتقان وجودة الكود</p>
         </div>
-        <div class="bg-[#0A0A0A] border border-white/5 p-10 rounded-[2.5rem] hover:border-green-500/30 transition shadow-xl">
-            <h3 class="text-4xl font-black mb-2">+3</h3>
-            <p class="text-gray-400 font-bold">سنوات خبرة</p>
-        </div>
-    </section>
-
-    <section id="skills" class="py-20 bg-[#080808] border-y border-white/5">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-black mb-16 text-center">الأدوات التي أتقنها</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="text-center p-6 grayscale hover:grayscale-0 transition opacity-50 hover:opacity-100">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-16 mx-auto mb-4">
-                    <p class="font-bold">HTML5</p>
-                </div>
-                <div class="text-center p-6 grayscale hover:grayscale-0 transition opacity-50 hover:opacity-100">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-16 mx-auto mb-4">
-                    <p class="font-bold">CSS3</p>
-                </div>
-                <div class="text-center p-6 grayscale hover:grayscale-0 transition opacity-50 hover:opacity-100">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-16 mx-auto mb-4">
-                    <p class="font-bold">JavaScript</p>
-                </div>
-                <div class="text-center p-6 grayscale hover:grayscale-0 transition opacity-50 hover:opacity-100">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-16 mx-auto mb-4 invert">
-                    <p class="font-bold">Git & GitHub</p>
-                </div>
-            </div>
+        
+        <div class="bg-[#0A0A0A] border border-white/5 p-12 rounded-[3rem] group hover:border-green-500/50 transition-all">
+            <h3 class="text-5xl font-black mb-3 text-white group-hover:text-green-500 transition">+3</h3>
+            <p class="text-gray-500 font-bold text-lg uppercase tracking-wider">سنوات مـن الخبرة</p>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-gray-600 text-sm">
-        <p>© 2026 عمران. جميع الحقوق محفوظة.</p>
+    <footer class="py-12 text-center border-t border-white/5">
+        <div class="text-xl font-black mb-4">IMRAN<span class="text-green-500">.</span></div>
+        <p class="text-gray-600 text-xs tracking-[0.3em] uppercase">© 2026 Developed with Passion</p>
     </footer>
 
 </body>
