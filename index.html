@@ -8,20 +8,46 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #020202; color: white; overflow-x: hidden; }
+        body { font-family: 'Cairo', sans-serif; background-color: #010101; color: white; overflow-x: hidden; }
         .geo-grid { 
-            background-image: linear-gradient(to right, rgba(34, 197, 94, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(34, 197, 94, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
+            background-image: radial-gradient(rgba(34, 197, 94, 0.1) 1.5px, transparent 1.5px);
+            background-size: 50px 50px;
         }
-        .text-glow { text-shadow: 0 0 30px rgba(34, 197, 94, 0.8); }
-        .profile-frame { border: 4px solid #22c55e; box-shadow: 0 0 50px rgba(34, 197, 94, 0.4); }
-        .clip-geo-triangle { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
-        .sand-fill { 
-            height: 0%; 
-            transition: height 8s cubic-bezier(0.4, 0, 0.2, 1); 
-            background: linear-gradient(to top, rgba(22, 101, 52, 0.6), rgba(34, 197, 94, 0.3));
+        
+        /* تصميم الدوائر الزجاجية */
+        .glass-circle {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
         }
-        .triangle-container { height: 180px; } 
+        .glass-circle:hover { border-color: #22c55e; transform: translateY(-10px); box-shadow: 0 0 40px rgba(34, 197, 94, 0.2); }
+
+        /* تأثير البخار المتصاعد */
+        .steam {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 0%;
+            background: radial-gradient(circle, rgba(34, 197, 94, 0.4) 0%, transparent 70%);
+            filter: blur(20px);
+            animation: rise 6s infinite ease-in-out;
+            opacity: 0;
+            transition: height 5s ease-out, opacity 2s;
+        }
+        @keyframes rise {
+            0% { transform: translateX(-50%) translateY(0) scale(1); opacity: 0.3; }
+            50% { transform: translateX(-50%) translateY(-50px) scale(1.2); opacity: 0.6; }
+            100% { transform: translateX(-50%) translateY(-100px) scale(1.5); opacity: 0; }
+        }
+
+        .text-glow { text-shadow: 0 0 25px rgba(34, 197, 94, 0.7); }
+        .profile-frame { border: 3px solid #22c55e; box-shadow: 0 0 50px rgba(34, 197, 94, 0.3); }
     </style>
 </head>
 <body class="geo-grid">
@@ -32,68 +58,60 @@
 
     <main class="flex flex-col items-center justify-center pt-4 pb-20 px-6 text-center max-w-6xl mx-auto">
         
-        <div class="relative mb-8">
-            <div class="absolute -inset-16 bg-green-500 rounded-full blur-[100px] opacity-10"></div>
-            <img src="me.jpg/future-header.png" alt="عمران" class="relative w-40 h-40 md:w-52 md:h-52 rounded-full object-cover profile-frame">
+        <div class="relative mb-10">
+            <div class="absolute -inset-20 bg-green-500 rounded-full blur-[120px] opacity-10"></div>
+            <img src="me.jpg/future-header.png" alt="عمران" class="relative w-44 h-44 md:w-56 md:h-56 rounded-full object-cover profile-frame">
         </div>
 
-        <h2 class="text-green-500 text-lg md:text-xl font-bold mb-6 italic opacity-90">
-            "وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ وَرَسُولُهُ وَالْمُؤْمِنُونَ"
-        </h2>
+        <p class="text-green-500/80 text-sm md:text-base font-bold mb-6 tracking-widest italic">
+            "وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ"
+        </p>
 
-        <h1 class="text-5xl md:text-[75px] font-black leading-[1.1] tracking-tighter uppercase">
-            إبداع برمجـي
+        <h1 class="text-5xl md:text-[80px] font-black leading-none tracking-tighter uppercase">
+            نشيّد المستقبل
         </h1>
-        <h1 class="text-4xl md:text-[65px] font-black leading-[1.1] mb-8 tracking-tighter uppercase text-green-500 text-glow">
-            بلمسات هندسية
+        <h1 class="text-4xl md:text-[60px] font-black leading-tight mb-10 tracking-tighter uppercase text-green-500 text-glow">
+            بشيفرات من نور
         </h1>
 
-        <div class="mb-16">
-            <a href="https://wa.me/9647747231856" class="inline-flex items-center gap-3 bg-white text-black font-black py-4 px-10 rounded-2xl hover:bg-green-500 hover:scale-105 transition-all shadow-2xl">
-                <i data-lucide="message-circle" class="w-6 h-6 text-green-600"></i>
-                <span class="text-xl font-bold">تواصل معي الآن</span>
+        <div class="mb-20">
+            <a href="https://wa.me/9647747231856" class="inline-flex items-center gap-3 bg-white text-black font-black py-4 px-12 rounded-full hover:bg-green-500 transition-all shadow-xl hover:scale-110 active:scale-95">
+                <i data-lucide="message-circle" class="w-6 h-6"></i>
+                <span class="text-lg">تحدث مع المبتكر</span>
             </a>
         </div>
 
-        <div class="w-full grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="w-full grid grid-cols-2 md:grid-cols-4 gap-8">
             
-            <div class="relative group triangle-container flex flex-col items-center justify-end overflow-hidden">
-                <div class="absolute inset-x-2 top-0 bottom-0 bg-[#0A0A0A]/80 clip-geo-triangle border-t-2 border-green-500/10 group-hover:border-green-500 transition-all duration-700">
-                    <div class="sand-fill absolute bottom-0 left-0 w-full clip-geo-triangle"></div>
-                </div>
-                <div class="relative z-10 text-center pb-4">
-                    <div class="text-3xl font-black text-white counter" data-target="100">0%</div>
-                    <p class="text-[8px] text-gray-500 font-bold uppercase tracking-widest mt-1">Coding</p>
+            <div class="glass-circle aspect-square flex flex-col items-center justify-center p-6">
+                <div class="steam" id="steam-1"></div>
+                <div class="relative z-10">
+                    <div class="text-4xl md:text-5xl font-black text-white counter" data-target="100">0%</div>
+                    <p class="text-[10px] text-green-500 font-bold tracking-widest uppercase mt-2">Coding</p>
                 </div>
             </div>
 
-            <div class="relative group triangle-container flex flex-col items-center justify-end overflow-hidden">
-                <div class="absolute inset-x-2 top-0 bottom-0 bg-[#0A0A0A]/80 clip-geo-triangle border-t-2 border-green-500/10 group-hover:border-green-500 transition-all duration-700">
-                    <div class="sand-fill absolute bottom-0 left-0 w-full clip-geo-triangle"></div>
-                </div>
-                <div class="relative z-10 text-center pb-4">
-                    <div class="text-3xl font-black text-white counter" data-target="100">0%</div>
-                    <p class="text-[8px] text-gray-500 font-bold uppercase tracking-widest mt-1">Design</p>
+            <div class="glass-circle aspect-square flex flex-col items-center justify-center p-6">
+                <div class="steam" id="steam-2"></div>
+                <div class="relative z-10">
+                    <div class="text-4xl md:text-5xl font-black text-white counter" data-target="100">0%</div>
+                    <p class="text-[10px] text-green-500 font-bold tracking-widest uppercase mt-2">Design</p>
                 </div>
             </div>
 
-            <div class="relative group triangle-container flex flex-col items-center justify-end overflow-hidden">
-                <div class="absolute inset-x-2 top-0 bottom-0 bg-[#0A0A0A]/80 clip-geo-triangle border-t-2 border-green-500/10 group-hover:border-green-500 transition-all duration-700">
-                    <div class="sand-fill absolute bottom-0 left-0 w-full clip-geo-triangle"></div>
-                </div>
-                <div class="relative z-10 text-center pb-4">
-                    <div class="text-3xl font-black text-white counter" data-target="100">0%</div>
-                    <p class="text-[8px] text-gray-500 font-bold uppercase tracking-widest mt-1">Logic</p>
+            <div class="glass-circle aspect-square flex flex-col items-center justify-center p-6">
+                <div class="steam" id="steam-3"></div>
+                <div class="relative z-10">
+                    <div class="text-4xl md:text-5xl font-black text-white counter" data-target="100">0%</div>
+                    <p class="text-[10px] text-green-500 font-bold tracking-widest uppercase mt-2">Logic</p>
                 </div>
             </div>
 
-            <div class="relative group triangle-container flex flex-col items-center justify-end overflow-hidden">
-                <div class="absolute inset-x-2 top-0 bottom-0 bg-[#0A0A0A]/80 clip-geo-triangle border-t-2 border-green-500/10 group-hover:border-green-500 transition-all duration-700">
-                    <div class="sand-fill absolute bottom-0 left-0 w-full clip-geo-triangle"></div>
-                </div>
-                <div class="relative z-10 text-center pb-4">
-                    <div class="text-3xl font-black text-white counter" data-target="100">0%</div>
-                    <p class="text-[8px] text-gray-500 font-bold uppercase tracking-widest mt-1">Speed</p>
+            <div class="glass-circle aspect-square flex flex-col items-center justify-center p-6">
+                <div class="steam" id="steam-4"></div>
+                <div class="relative z-10">
+                    <div class="text-4xl md:text-5xl font-black text-white counter" data-target="100">0%</div>
+                    <p class="text-[10px] text-green-500 font-bold tracking-widest uppercase mt-2">Speed</p>
                 </div>
             </div>
 
@@ -103,9 +121,12 @@
     <script>
         lucide.createIcons();
         window.onload = () => {
-            document.querySelectorAll('.sand-fill').forEach(fill => {
-                setTimeout(() => { fill.style.height = '100%'; }, 500);
+            // تفعيل تأثير البخار
+            document.querySelectorAll('.steam').forEach(s => {
+                setTimeout(() => { s.style.height = '120%'; s.style.opacity = '1'; }, 500);
             });
+
+            // العداد الرقمي الهادئ
             document.querySelectorAll('.counter').forEach(counter => {
                 const target = +counter.getAttribute('data-target');
                 let count = 0;
@@ -113,7 +134,7 @@
                     count++;
                     counter.innerText = count + '%';
                     if (count >= target) clearInterval(timer);
-                }, 80);
+                }, 60);
             });
         };
     </script>
