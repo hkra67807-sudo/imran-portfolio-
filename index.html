@@ -10,21 +10,21 @@
     <style>
         body { font-family: 'Cairo', sans-serif; background-color: #010101; color: white; overflow-x: hidden; }
         .geo-grid { 
-            background-image: radial-gradient(rgba(34, 197, 94, 0.1) 1.5px, transparent 1.5px);
+            background-image: radial-gradient(rgba(34, 197, 94, 0.08) 1.5px, transparent 1.5px);
             background-size: 50px 50px;
         }
         
-        /* تصميم الدوائر الزجاجية */
+        /* الدوائر الزجاجية */
         .glass-circle {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.5s ease;
             position: relative;
             overflow: hidden;
         }
-        .glass-circle:hover { border-color: #22c55e; transform: translateY(-10px); box-shadow: 0 0 40px rgba(34, 197, 94, 0.2); }
+        .glass-circle:hover { border-color: #22c55e; transform: scale(1.05); shadow: 0 0 30px rgba(34, 197, 94, 0.2); }
 
         /* تأثير البخار المتصاعد */
         .steam {
@@ -32,22 +32,22 @@
             bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80%;
+            width: 70%;
             height: 0%;
             background: radial-gradient(circle, rgba(34, 197, 94, 0.4) 0%, transparent 70%);
-            filter: blur(20px);
-            animation: rise 6s infinite ease-in-out;
+            filter: blur(15px);
+            animation: rise 5s infinite ease-in-out;
             opacity: 0;
-            transition: height 5s ease-out, opacity 2s;
+            transition: height 4s ease-out, opacity 2s;
         }
         @keyframes rise {
-            0% { transform: translateX(-50%) translateY(0) scale(1); opacity: 0.3; }
-            50% { transform: translateX(-50%) translateY(-50px) scale(1.2); opacity: 0.6; }
-            100% { transform: translateX(-50%) translateY(-100px) scale(1.5); opacity: 0; }
+            0% { transform: translateX(-50%) translateY(0) scale(1); opacity: 0.2; }
+            50% { transform: translateX(-50%) translateY(-40px) scale(1.3); opacity: 0.5; }
+            100% { transform: translateX(-50%) translateY(-80px) scale(1.6); opacity: 0; }
         }
 
-        .text-glow { text-shadow: 0 0 25px rgba(34, 197, 94, 0.7); }
-        .profile-frame { border: 3px solid #22c55e; box-shadow: 0 0 50px rgba(34, 197, 94, 0.3); }
+        .text-glow { text-shadow: 0 0 25px rgba(34, 197, 94, 0.8); }
+        .profile-frame { border: 3px solid #22c55e; box-shadow: 0 0 40px rgba(34, 197, 94, 0.3); }
     </style>
 </head>
 <body class="geo-grid">
@@ -56,62 +56,62 @@
         <div class="text-3xl font-black tracking-tighter uppercase italic">IMRAN<span class="text-green-500">.</span></div>
     </nav>
 
-    <main class="flex flex-col items-center justify-center pt-4 pb-20 px-6 text-center max-w-6xl mx-auto">
+    <main class="flex flex-col items-center justify-center pt-2 pb-20 px-6 text-center max-w-6xl mx-auto">
         
-        <div class="relative mb-10">
+        <div class="relative mb-8">
             <div class="absolute -inset-20 bg-green-500 rounded-full blur-[120px] opacity-10"></div>
-            <img src="me.jpg/future-header.png" alt="عمران" class="relative w-44 h-44 md:w-56 md:h-56 rounded-full object-cover profile-frame">
+            <img src="me.jpg/future-header.png" alt="عمران" class="relative w-40 h-40 md:w-52 md:h-52 rounded-full object-cover profile-frame">
         </div>
 
-        <p class="text-green-500/80 text-sm md:text-base font-bold mb-6 tracking-widest italic">
+        <p class="text-green-500/80 text-sm md:text-base font-bold mb-6 italic">
             "وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ"
         </p>
 
-        <h1 class="text-5xl md:text-[80px] font-black leading-none tracking-tighter uppercase">
-            نشيّد المستقبل
+        <h1 class="text-5xl md:text-[75px] font-black leading-none tracking-tighter uppercase">
+            نصنع الواقع الرقمي
         </h1>
-        <h1 class="text-4xl md:text-[60px] font-black leading-tight mb-10 tracking-tighter uppercase text-green-500 text-glow">
-            بشيفرات من نور
+        <h1 class="text-3xl md:text-[55px] font-black leading-tight mb-10 tracking-tighter uppercase text-green-500 text-glow">
+            بأبعاد تتجاوز الخيال
         </h1>
 
-        <div class="mb-20">
-            <a href="https://wa.me/9647747231856" class="inline-flex items-center gap-3 bg-white text-black font-black py-4 px-12 rounded-full hover:bg-green-500 transition-all shadow-xl hover:scale-110 active:scale-95">
-                <i data-lucide="message-circle" class="w-6 h-6"></i>
-                <span class="text-lg">تحدث مع المبتكر</span>
+        <div class="mb-16">
+            <a href="https://wa.me/9647747231856" class="inline-flex items-center gap-3 bg-white text-black font-black py-4 px-12 rounded-2xl hover:bg-green-500 transition-all shadow-xl hover:scale-105">
+                <i data-lucide="message-circle" class="w-6 h-6 text-green-600"></i>
+                <span class="text-lg">ابدأ مشروعك الآن</span>
             </a>
         </div>
 
-        <div class="w-full grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="w-full grid grid-cols-2 md:grid-cols-4 gap-6">
             
-            <div class="glass-circle aspect-square flex flex-col items-center justify-center p-6">
-                <div class="steam" id="steam-1"></div>
+            <div class="glass-circle aspect-square flex flex-col items-center justify-center">
+                <div class="steam"></div>
                 <div class="relative z-10">
-                    <div class="text-4xl md:text-5xl font-black text-white counter" data-target="100">0%</div>
-                    <p class="text-[10px] text-green-500 font-bold tracking-widest uppercase mt-2">Coding</p>
+                    <div class="text-3xl md:text-5xl font-black text-white counter" data-target="100">0%</div>
+                    <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mt-1">Coding</p>
                 </div>
             </div>
 
-            <div class="glass-circle aspect-square flex flex-col items-center justify-center p-6">
-                <div class="steam" id="steam-2"></div>
+            <div class="glass-circle aspect-square flex flex-col items-center justify-center">
+                <div class="steam"></div>
                 <div class="relative z-10">
-                    <div class="text-4xl md:text-5xl font-black text-white counter" data-target="100">0%</div>
-                    <p class="text-[10px] text-green-500 font-bold tracking-widest uppercase mt-2">Design</p>
+                    <div class="text-3xl md:text-5xl font-black text-white counter" data-target="100">0%</div>
+                    <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mt-1">Design</p>
                 </div>
             </div>
 
-            <div class="glass-circle aspect-square flex flex-col items-center justify-center p-6">
-                <div class="steam" id="steam-3"></div>
+            <div class="glass-circle aspect-square flex flex-col items-center justify-center">
+                <div class="steam"></div>
                 <div class="relative z-10">
-                    <div class="text-4xl md:text-5xl font-black text-white counter" data-target="100">0%</div>
-                    <p class="text-[10px] text-green-500 font-bold tracking-widest uppercase mt-2">Logic</p>
+                    <div class="text-3xl md:text-5xl font-black text-white counter" data-target="100">0%</div>
+                    <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mt-1">Logic</p>
                 </div>
             </div>
 
-            <div class="glass-circle aspect-square flex flex-col items-center justify-center p-6">
-                <div class="steam" id="steam-4"></div>
+            <div class="glass-circle aspect-square flex flex-col items-center justify-center">
+                <div class="steam"></div>
                 <div class="relative z-10">
-                    <div class="text-4xl md:text-5xl font-black text-white counter" data-target="100">0%</div>
-                    <p class="text-[10px] text-green-500 font-bold tracking-widest uppercase mt-2">Speed</p>
+                    <div class="text-3xl md:text-5xl font-black text-white counter" data-target="100">0%</div>
+                    <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mt-1">Speed</p>
                 </div>
             </div>
 
@@ -121,12 +121,9 @@
     <script>
         lucide.createIcons();
         window.onload = () => {
-            // تفعيل تأثير البخار
             document.querySelectorAll('.steam').forEach(s => {
-                setTimeout(() => { s.style.height = '120%'; s.style.opacity = '1'; }, 500);
+                setTimeout(() => { s.style.height = '100%'; s.style.opacity = '1'; }, 500);
             });
-
-            // العداد الرقمي الهادئ
             document.querySelectorAll('.counter').forEach(counter => {
                 const target = +counter.getAttribute('data-target');
                 let count = 0;
@@ -134,7 +131,7 @@
                     count++;
                     counter.innerText = count + '%';
                     if (count >= target) clearInterval(timer);
-                }, 60);
+                }, 70);
             });
         };
     </script>
