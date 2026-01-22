@@ -3,82 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imran | عمران</title>
+    <title>Imran Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; background: #000; color: white; overflow-x: hidden; min-height: 100vh; margin: 0; }
+        body { font-family: 'Cairo', sans-serif; background: #000; color: white; margin: 0; overflow-x: hidden; }
         
-        /* النجوم الـ 150 */
+        /* طبقة النجوم الـ 150 */
         .stars-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
         .star { position: absolute; background: white; border-radius: 50%; opacity: 0.3; animation: twinkle var(--duration) infinite; }
         @keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.8; } }
 
-        /* الصورة المربعة بحجم 300px */
-        .profile-box {
-            width: 300px;
+        /* حاوية الصورة المربعة الجانبية */
+        .profile-side {
+            width: 300px; /* الحجم المطلوب */
             height: 300px;
             border: 2px solid #22c55e;
             border-radius: 25px;
-            object-fit: cover;
+            overflow: hidden;
             box-shadow: 0 0 30px rgba(34, 197, 94, 0.2);
         }
+        .profile-side img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* المهارات الأربعة */
-        .glass-pill {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(34, 197, 94, 0.15);
-            border-radius: 999px;
-            height: 110px;
+        /* كبسولات المهارات الجانبية */
+        .skill-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 50px;
+            padding: 15px 10px;
+            text-align: center;
             position: relative; overflow: hidden;
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
-        .steam { position: absolute; bottom: 0; width: 100%; height: 0%; background: linear-gradient(to top, rgba(34, 197, 94, 0.2), transparent); transition: height 4s; }
-        .text-glow { text-shadow: 0 0 20px rgba(34, 197, 94, 0.6); }
+        .steam-bar { position: absolute; bottom: 0; left: 0; width: 100%; height: 0%; background: linear-gradient(to top, rgba(34, 197, 94, 0.3), transparent); transition: height 4s ease-out; }
     </style>
 </head>
 <body>
 
     <div class="stars-container" id="starsField"></div>
 
-    <nav class="p-8 max-w-7xl mx-auto">
+    <nav class="p-8 max-w-7xl mx-auto flex justify-between">
         <div class="text-3xl font-black italic uppercase">IMRAN<span class="text-green-500">.</span></div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center justify-center gap-12 lg:mt-10">
+    <main class="max-w-7xl mx-auto px-6 py-12 flex flex-col lg:flex-row items-center justify-between gap-12">
         
-        <div class="relative">
-            <img src="me.jpg/future-header.png" alt="عمران" class="profile-box">
+        <div class="lg:w-1/2 flex justify-center lg:justify-start">
+            <div class="profile-side">
+                <img src="me.jpg/future-header.png" alt="عمران">
+            </div>
         </div>
 
-        <div class="text-center lg:text-right flex-1">
-            <p class="text-green-500 font-bold mb-2 italic">"وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ"</p>
-            <h1 class="text-4xl md:text-6xl font-black mb-1">نصنع الواقع الرقمي</h1>
-            <h1 class="text-2xl md:text-4xl font-black text-green-500 text-glow mb-8">بأبعاد تتجاوز الخيال</h1>
+        <div class="lg:w-1/2 text-center lg:text-right">
+            <p class="text-green-500 font-bold mb-4 italic">"وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ"</p>
+            <h1 class="text-5xl md:text-7xl font-black mb-2 leading-tight">نصنع الواقع الرقمي</h1>
+            <h1 class="text-2xl md:text-4xl font-black text-green-500 mb-10" style="text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);">بأبعاد تتجاوز الخيال</h1>
 
-            <div class="mb-10">
-                <a href="https://wa.me/9647747231856" class="inline-flex items-center gap-3 bg-white text-black font-black py-3 px-8 rounded-xl hover:bg-green-500 transition-all">
+            <div class="mb-12">
+                <a href="https://wa.me/9647747231856" class="inline-flex items-center gap-3 bg-white text-black font-black py-4 px-10 rounded-2xl hover:bg-green-500 transition-all">
                     <i data-lucide="message-circle"></i>
                     <span>تواصل الآن</span>
                 </a>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="glass-pill"><div class="steam"></div><div class="relative z-10 font-bold">100%<br><span class="text-[8px] uppercase">Code</span></div></div>
-                <div class="glass-pill"><div class="steam"></div><div class="relative z-10 font-bold">100%<br><span class="text-[8px] uppercase">Design</span></div></div>
-                <div class="glass-pill"><div class="steam"></div><div class="relative z-10 font-bold">100%<br><span class="text-[8px] uppercase">Logic</span></div></div>
-                <div class="glass-pill"><div class="steam"></div><div class="relative z-10 font-bold">100%<br><span class="text-[8px] uppercase">Speed</span></div></div>
+            <div class="grid grid-cols-2 gap-4 mt-8">
+                <div class="skill-item"><div class="steam-bar"></div><div class="relative z-10 font-black">100%<br><span class="text-[9px] text-green-500 uppercase">Code</span></div></div>
+                <div class="skill-item"><div class="steam-bar"></div><div class="relative z-10 font-black">100%<br><span class="text-[9px] text-green-500 uppercase">Design</span></div></div>
+                <div class="skill-item"><div class="steam-bar"></div><div class="relative z-10 font-black">100%<br><span class="text-[9px] text-green-500 uppercase">Logic</span></div></div>
+                <div class="skill-item"><div class="steam-bar"></div><div class="relative z-10 font-black">100%<br><span class="text-[9px] text-green-500 uppercase">Speed</span></div></div>
             </div>
         </div>
     </main>
 
     <script>
         lucide.createIcons();
-        
-        // توليد النجوم برمجياً لضمان العدد 150
-        const starsField = document.getElementById('starsField');
+
+        // إنشاء الـ 150 نجمة
+        const container = document.getElementById('starsField');
         for (let i = 0; i < 150; i++) {
             const star = document.createElement('div');
             star.className = 'star';
@@ -87,12 +89,14 @@
             star.style.top = Math.random() * 100 + '%';
             star.style.left = Math.random() * 100 + '%';
             star.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
-            starsField.appendChild(star);
+            container.appendChild(star);
         }
 
-        // تفعيل حركة البخار عند التحميل
+        // تأثير البخار
         window.onload = () => {
-            document.querySelectorAll('.steam').forEach(s => s.style.height = '100%');
+            setTimeout(() => {
+                document.querySelectorAll('.steam-bar').forEach(b => b.style.height = '100%');
+            }, 500);
         };
     </script>
 </body>
